@@ -351,11 +351,15 @@ ul {
   background-repeat: no-repeat;
   min-height: 800px; }
 .banner-area .slide_bg1 {
-  background: url(../img/banner/home-banner.jpg); }
+  background: url(https://ik.imagekit.io/dcrazyweb/4f23134a-7b61-4620-9d97-fffb28c08752_maxresdefault_1820x800__1__4TPG_s5dO.jpg);
+   }
 .banner-area .slide_bg2 {
-  background: url(../img/banner/home-banner2.jpg); }
+  background: url(https://ik.imagekit.io/dcrazyweb/4f23134a-7b61-4620-9d97-fffb28c08752_herooo_gmSL9xn3M.jpg);  /* Background image is centered vertically and horizontally at all times */
+}
 .banner-area .slide_bg3 {
-  background: url(../img/banner/home-banner3.jpg); }
+  background: url(https://ik.imagekit.io/dcrazyweb/4f23134a-7b61-4620-9d97-fffb28c08752_hero_1_M5uNggSpM.jpeg); 
+   
+}
 @media (max-width: 991px) {
   .banner-area .fullscreen {
     height: 600px !important; } }
