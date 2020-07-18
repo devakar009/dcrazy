@@ -109,32 +109,27 @@
     <section class="contact-section area-padding">
         <div class="container">
             <div class="d-none d-sm-block mb-5 pb-4">
-              
-                <div id="map" style="height: 480px;"></div>
+              <style>
+                #map {
+                height: 100%;
+                }
+                  </style>
+                <div id="map"></div>
                 <script>
-                    function initMap() {
-                        var uluru = {lat: -25.363, lng: 131.044};
-                        var grayStyles = [
-                        {
-                            featureType: "all",
-                            stylers: [
-                            { saturation: -90 },
-                            { lightness: 50 }
-                            ]
-                        },
-                        {elementType: 'labels.text.fill', stylers: [{color: '#ccdee9'}]}
-                        ];
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            center: {lat: -31.197, lng: 150.744},
-                            zoom: 9,
-                            styles: grayStyles,
-                            scrollwheel:  false
-                        });
-                    }
+                   var map;
+                function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: -34.397, lng: 150.644 },
+                    zoom: 8
+                });
+                }
 
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
-                  
+                   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+                   <script
+                     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+                     defer
+                   ></script>  
             </div>
 
 
@@ -178,8 +173,8 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-home"></i></span>
                         <div class="media-body">
-                            <h3>Buttonwood, California.</h3>
-                            <p>Rosemead, CA 91770</p>
+                            <h3>House no 4 -14 jpnagar, Miyapur, Hyderabad.</h3>
+                            <p>Telangana 500049</p>
                         </div>
                     </div>
                     <div class="media contact-info">
