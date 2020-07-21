@@ -131,7 +131,7 @@
                     <h2 class="contact-title">Get in Touch</h2>
                 </div>
                 <div class="col-lg-8">
-                    <form class="form-contact contact_form" action="https://fanatical-messy-hotel.glitch.me/mail" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="form-contact contact_form" id="contactForm" novalidate="novalidate">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="button button-contactForm">Send Message</button>
+                            <button type="submit" onclick="send()" class="button button-contactForm">Send Message</button>
                         </div>
                     </form>
 
@@ -313,7 +313,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </div>
     <!--================End Contact Success and Error message Area =================-->
+<script type="text/javascript">
+    document.getElementById('contactForm').addEventListener("click", function(event){
+        event.preventDefault()
+    })
+    function send() {
+    let from = document.getElementById('email').value
+    let name = document.getElementById('name').value
+    let body = document.getElementById('message').value
+    let subject = document.getElementById('subject').value
+ 
+    var oReq = new XMLHttpRequest();
+    console.log(from, name, body, subject)
+    oReq.open("POST", "https://cors-anywhere.herokuapp.com/https://fanatical-messy-hotel.glitch.me/mail?name="+ name + "&from=" + from  +"&subject=" +subject +"&" + "body=" + body);
+    oReq.send();
+    alert("Your Form Hass been submitted")
+    location.reload();
 
+    
+}
+
+
+
+
+</script>
 
 
 <!-- Optional JavaScript -->
@@ -328,7 +351,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="js/jquery.counterup.min.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/mail-script.js"></script>
-<script src="js/contact.js"></script>
+<script src="js/contactt.js"></script>
 <script src="js/jquery.form.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/mail-script.js"></script>
