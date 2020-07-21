@@ -4,9 +4,8 @@
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
     $cmessage = $_REQUEST['message'];
-
+/*
     $headers = "From: $from";
 	$headers = "From: " . $from . "\r\n";
 	$headers .= "Reply-To: ". $from . "\r\n";
@@ -26,7 +25,7 @@
 	$body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
 	$body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
 	$body .= "</tr>";
-	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
+	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$subject}</td></tr>";
 	$body .= "<tr><td></td></tr>";
 	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
 	$body .= "</tbody></table>";
@@ -34,4 +33,14 @@
 
     $send = mail($to, $subject, $body, $headers);
 
-?>
+*/
+    shell_exec(
+    	curl --request POST \
+  --url https://api.pepipost.com/v5/mail/send \
+  --header 'api_key: <Your API Key>' \
+  --header 'content-type: application/json' \
+  --data '{"from":{"email":"devakar009@pepisandbox.com","name":"devakar009"},"subject":"Your Barcelona flight e-ticket : BCN2118050657714","content":[{"type":"html","value":"Hello Lionel, Your flight for Barcelona is confirmed."}],"personalizations":[{"to":[{"email":"devakar009@gmail.com","name":"Lionel Messi"}]}]}')
+
+
+
+    ?>
